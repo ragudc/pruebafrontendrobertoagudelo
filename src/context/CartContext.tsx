@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type PropsWithChildren,
-} from 'react';
+import {createContext, useContext,useEffect, useState, type PropsWithChildren,} from 'react';
 import type { CartItem } from '../interfaces/CartItem';
 
 /* ---------- tipos ---------- */

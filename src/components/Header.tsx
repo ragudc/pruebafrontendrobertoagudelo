@@ -8,12 +8,13 @@ const Bar = styled.header`
   position: sticky;
   top: 0;
   z-index: 0;
-  background: #fff;
+  background: #f1f1f1;
   border-bottom: 1px solid #eee;
-  padding: 0.75rem 1rem;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 `;
 
 const NavList = styled.ul`

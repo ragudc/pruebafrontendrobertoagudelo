@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;     /* ← clave */
+    margin: 0;
+    padding: 0;
   }
 
   /* las imágenes jamás deben ensanchar la página */
@@ -17,9 +19,10 @@ export const GlobalStyle = createGlobalStyle`
   button {
     font-family: inherit;
   }
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
     body {
-      padding-top: 10px;
+      margin: 0;
+      padding: 0;
     }
   }
     body.menu-open {

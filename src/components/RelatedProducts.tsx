@@ -26,7 +26,7 @@ const Grid = styled.div`
 
   @media (min-width: 600px) {
     /* Pantallas >=600px: grilla fluida con auto-fill */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     /* Restablecer el span para vista de escritorio */
     & > * {
       grid-column: auto;

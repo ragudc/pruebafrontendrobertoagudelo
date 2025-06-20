@@ -67,7 +67,7 @@ const ProductPage: React.FC = () => {
     opacity: 0.85;
   }
     @media (min-width: 768px) {
-    width: 17%;
+    width: 19%;
   }
 `;
   const [product, setProduct]   = useState<Product | null>(null);

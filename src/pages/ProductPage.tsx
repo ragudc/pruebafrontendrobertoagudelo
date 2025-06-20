@@ -14,7 +14,6 @@ const PageWrapper = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
   padding: 1rem;
 
@@ -132,25 +131,33 @@ const ProductPage: React.FC = () => {
         {/* Columna de información */}
         <InfoColumn>
           <h1>{product.title}</h1>
-          <p><strong>Marca:</strong> {product.brand}</p>
-          <p><strong>SKU:</strong> {product.SKU}</p>
-          <p><strong>Categoría:</strong> {product.category}</p>
-          <p><strong>Color:</strong> {product.color}</p>
+          <p>
+            <strong>Marca:</strong> {product.brand}
+          </p>
+          <p>
+            <strong>SKU:</strong> {product.SKU}
+          </p>
+          <p>
+            <strong>Categoría:</strong> {product.category}
+          </p>
+          <p>
+            <strong>Color:</strong> {product.color}
+          </p>
 
           <Price>
             <span className="original">Precio${product.fullPrice}</span>
-            ${product.discountedPrice}
+            Precio con descuento: ${product.discountedPrice}
           </Price>
 
           <SizeSelector
-            sizes={sizes.map(String)}   /* convertimos a string dentro */
+            sizes={sizes.map(String)} /* convertimos a string dentro */
             onSelect={setSize}
           />
 
           <AddButton onClick={agregarAlCarrito}>
             <FiShoppingBag />
-           Agregar al Carrito
-           </AddButton>
+            Agregar al Carrito
+          </AddButton>
         </InfoColumn>
       </PageWrapper>
 

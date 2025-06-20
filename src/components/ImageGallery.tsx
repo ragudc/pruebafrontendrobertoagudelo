@@ -19,7 +19,8 @@ const Thumbnail = styled.img`
 `;
 
 const MainImage = styled.img`
-  width: 300px; height: 300px;
+  width: 400px; 
+  height: auto;
   object-fit: cover;
 `;
 

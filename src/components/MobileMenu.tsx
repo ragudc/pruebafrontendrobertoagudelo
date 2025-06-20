@@ -85,10 +85,10 @@ const MobileMenu: React.FC<Props> = ({ open, onClose }) => {
 
         <MenuLink href="#">MUJER</MenuLink>
         <MenuLink href="#">HOMBRE</MenuLink>
+        <MenuLink href="#"> GUIA DE REGALOS  </MenuLink>
         <MenuLink href="#" style={{ color: 'red' }}>
           OUTLET
         </MenuLink>
-        <MenuLink href="#">MUNDO VÉLEZ</MenuLink>
         <MenuLink href="#" style={{ fontWeight: 700 }}>
           FLY UP
         </MenuLink>

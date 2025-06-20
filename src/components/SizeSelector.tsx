@@ -13,7 +13,7 @@ const Selector = styled.select`
 
 const SizeSelector: React.FC<Props> = ({ sizes, onSelect }) => (
   <div>
-    <label htmlFor="talla">Talla:</label>
+    <label htmlFor="talla"><strong> Talla: </strong></label>
     <Selector id="talla" onChange={e => onSelect(e.target.value)}>
       <option value="">Selecciona una talla</option>
       {sizes.map(size => (

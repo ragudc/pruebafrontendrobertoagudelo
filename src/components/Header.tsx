@@ -103,14 +103,15 @@ const Header: React.FC = () => {
         </Burger>
 
         {/* Branding */}
-        <strong style={{ fontSize: '1.1rem' }}>Mi-Tienda</strong>
+        <strong style={{ fontSize: "1.1rem" }}>Mi-Tienda</strong>
 
         {/* Navegación principal (desktop) */}
         <NavList>
-          <li>Mujer</li>
-          <li>Hombre</li>
-          <li>Guía de Regalos</li>
-          <li>Vélez</li>
+          <li>MUJER</li>
+          <li>HOMBRE</li>
+          <li>GUIA DE REGALOS</li>
+          <li>OUTLET</li>
+          <li>FLY UP</li>
         </NavList>
 
         {/* Iconos */}

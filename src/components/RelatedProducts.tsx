@@ -6,19 +6,31 @@ interface Props {
   products: Product[];
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem;
+const Section = styled.section`
+  padding: 16px;
+`;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 100%;
+const Grid = styled.div`
+  display: grid;
+  gap: 16px;
+  justify-content: center;
+  /* Móvil: 2 columnas (usando 4 columnas escalares) */
+  grid-template-columns: repeat(4, 1fr);
+  & > * {
+    grid-column: span 2; /* Cada producto ocupa 2 columnas */
+  }
+  /* Centrar último producto si la cantidad es impar */
+  & > *:nth-child(odd):last-child {
+    grid-column: 2 / span 2;
+  }
+
+  @media (min-width: 600px) {
+    /* Pantallas >=600px: grilla fluida con auto-fill */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Restablecer el span para vista de escritorio */
+    & > * {
+      grid-column: auto;
+    }
   }
 `;
 
@@ -27,24 +39,6 @@ const Title = styled.h2`
   margin-bottom: 1rem;
   text-align: center;
   justify-content: center;
-`;
-
-const List = styled.div`
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-
-  /* scroll suave */
-  scroll-behavior: smooth;
-
-  &::-webkit-scrollbar {
-    height: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 3px;
-  }
 `;
 
 const Card = styled.div`
@@ -71,11 +65,12 @@ const Card = styled.div`
   }
 `;
 
+
 const RelatedProducts: React.FC<Props> = ({ products }) => (
   <>
   <Title>Productos Relacionados</Title>
-  <Container>
-    <List>
+  <Section>
+    <Grid>
       {products.map((p) => (
         <Card key={p.id}>
           <img src={p.images[0]} alt={p.title} />
@@ -83,8 +78,8 @@ const RelatedProducts: React.FC<Props> = ({ products }) => (
           <p><strong>${p.discountedPrice}</strong></p>
         </Card>
       ))}
-    </List>
-  </Container>
+    </Grid>
+  </Section>
   </>
   
 );

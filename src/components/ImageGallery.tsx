@@ -10,7 +10,8 @@ const GalleryContainer = styled.div`
 `;
 
 const Thumbnail = styled.img`
-  width: 60px; height: 60px;
+  width: 60px; 
+  height: 60px;
   margin-right: 8px;
   cursor: pointer;
   border: 2px solid transparent;

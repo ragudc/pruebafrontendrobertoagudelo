@@ -6,6 +6,7 @@ interface CartContextType {
   cart: CartItem[];
   addToCart: (item: CartItem) => void;
   removeFromCart: (index: number) => void;
+  updateQty: (index: number, qty: number) => void;
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
@@ -14,15 +15,7 @@ interface CartContextType {
 
 
 /* ---------- contexto ---------- */
-const CartContext = createContext<CartContextType>({
-   cart: [],
-   addToCart: () => {},
-   removeFromCart: () => {},
-   isOpen: false,
-   openCart: () => {},
-   closeCart: () => {},
-   toggleCart: () => {},
-});
+const CartContext = createContext<CartContextType>({} as CartContextType);
 
 export const useCart = () => useContext(CartContext);
 
@@ -44,6 +37,13 @@ export const CartProvider = ({ children }: PropsWithChildren<object>) => {
   const removeFromCart = (index: number) =>
     setCart(prev => prev.filter((_, i) => i !== index));
 
+  const updateQty = (index: number, qty: number) =>
+    setCart(prev =>
+      prev.map((item, i) =>
+        i === index ? { ...item, quantity: Math.max(1, qty) } : item,
+      ),
+    );
+
   const openCart  = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
   const toggleCart = () => setIsOpen(o => !o);
@@ -54,6 +54,7 @@ export const CartProvider = ({ children }: PropsWithChildren<object>) => {
         cart,
         addToCart,
         removeFromCart,
+        updateQty,
         isOpen,
         openCart,
         closeCart,

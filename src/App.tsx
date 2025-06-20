@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/global';
 import ProductPage from './pages/ProductPage';
 import { CartProvider } from './context/CartContext';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 
 /*-- Tema opcional: solo colores principales --*/
@@ -20,6 +21,7 @@ const App: React.FC = () => (
     <CartProvider>
       <Header />
       <ProductPage />
+      <Footer />
     </CartProvider>
   </ThemeProvider>
 );

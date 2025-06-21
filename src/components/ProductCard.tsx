@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext';    // ← usa hook de carrito
 import type { Product } from '../interfaces/Product';
 import { FiShoppingBag } from 'react-icons/fi';
 import SizeSelector from './SizeSelector';
+import Cart from './Cart';
 
 /* -------- estilos -------- */
 const Card = styled.div`
@@ -92,7 +93,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
          <FiShoppingBag />
           Agregar al Carrito
       </AddButton>
-
+       <Cart />
     </Card>
   );
 };

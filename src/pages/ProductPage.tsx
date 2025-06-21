@@ -104,7 +104,7 @@ const ProductPage: React.FC = () => {
     }
 
     fetchData();
-  }, []);
+  }, [id]);
 
   /* agregar al carrito */
   const agregarAlCarrito = () => {

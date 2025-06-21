@@ -20,7 +20,7 @@ const Thumbnail = styled.img`
 
 const MainImage = styled.img`
   width: 400px; 
-  height: auto;
+  height: 400px;
   object-fit: cover;
 `;
 

@@ -5,8 +5,8 @@ import styled from 'styled-components';
 const Bar = styled.footer`
   width: 100%;
   text-align: center;
-  background: #f5f5f5;
-  color: #555;
+  background: #000000;
+  color: #FFFFFF;
   font-size: 0.85rem;
   padding: 1rem 0;
   margin-top: 3rem;

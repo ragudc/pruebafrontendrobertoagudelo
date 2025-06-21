@@ -15,7 +15,7 @@ interface CartContextType {
 
 
 /* ---------- contexto ---------- */
-const CartContext = createContext<CartContextType>({} as CartContextType);
+export const CartContext = createContext<CartContextType>({} as CartContextType);
 
 export const useCart = () => useContext(CartContext);
 

@@ -7,7 +7,9 @@ import SizeSelector from '../components/SizeSelector';
 import RelatedProducts from '../components/RelatedProducts';
 import Cart from '../components/Cart';
 import { useCart } from '../context/CartContext';
+import { useParams } from 'react-router-dom';
 import { FiShoppingBag } from 'react-icons/fi';
+
 
 /* ---------- estilos de la página ---------- */
 const PageWrapper = styled.main`
@@ -70,6 +72,7 @@ const ProductPage: React.FC = () => {
     width: 19%;
   }
 `;
+  const { id } = useParams(); 
   const [product, setProduct]   = useState<Product | null>(null);
   const [related, setRelated]   = useState<Product[]>([]);
   const [loading, setLoading]   = useState(true);
@@ -84,7 +87,7 @@ const ProductPage: React.FC = () => {
     async function fetchData() {
       try {
         const [prodRes, relRes] = await Promise.all([
-          axios.get<Product>('/api/products/productId/1'),
+          axios.get<Product>(`/api/products/productId/${id}`),
           axios.get<Product[]>('/api/products', {
             params: { ft: 'running' },
           }),

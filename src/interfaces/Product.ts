@@ -9,5 +9,5 @@ export interface Product {
   discountedPrice: number;    
   images: string[];           
   category: string;
-  relatedProducts?: Product[]; 
+  relatedProducts: Product[]; 
 }

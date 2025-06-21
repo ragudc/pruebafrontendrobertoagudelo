@@ -8,7 +8,7 @@ const Bar = styled.header`
   position: sticky;
   top: 0;
   z-index: 0;
-  background: #f1f1f1;
+  background: #000000;
   border-bottom: 1px solid #eee;
   padding: 1.5rem 2rem;
   display: flex;
@@ -23,6 +23,7 @@ const NavList = styled.ul`
   gap: 1.25rem;
   margin: 0;
   padding: 0;
+  color: #fff;
 
   li {
     cursor: pointer;
@@ -47,6 +48,7 @@ const Icons = styled.div`
   svg {
     cursor: pointer;
     font-size: 1.35rem;
+    color: #fff;
   }
 
   .badge {
@@ -84,6 +86,9 @@ const Burger = styled.button`
 
   @media (max-width: 768px) {
     display: block;
+    background-color:#FFFFFF;
+    color: #000000;
+    padding: 0.4rem 0.4rem;
   }
 `;
 
@@ -104,7 +109,7 @@ const Header: React.FC = () => {
         </Burger>
 
         {/* Branding */}
-        <strong style={{ fontSize: "1.1rem" }}>Mi-Tienda</strong>
+        <strong style={{ fontSize: "1.1rem", color: "#fff" }}>Mi-Tienda</strong>
 
         {/* Navegación principal (desktop) */}
         <NavList>

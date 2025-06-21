@@ -1,11 +1,9 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from './styles/global';
-import ProductPage from './pages/ProductPage';
-import { CartProvider } from './context/CartContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import AppRoutes from './routes/AppRoutes';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from './styles/global';
+import { CartProvider } from './context/CartContext';
 
 /*-- Tema opcional: solo colores principales --*/
 const theme = {
@@ -20,7 +18,7 @@ const App: React.FC = () => (
     <GlobalStyle />
     <CartProvider>
       <Header />
-      <ProductPage />
+      <AppRoutes />          {/* ← aquí renderiza las páginas */}
       <Footer />
     </CartProvider>
   </ThemeProvider>
